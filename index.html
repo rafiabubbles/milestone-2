@@ -243,5 +243,16 @@
         </div>
     </footer>
 </body>
+<script>
+    // Select all 'Add to cart' buttons
+    const cartButtons = document.querySelectorAll('.card button');
+
+    // Add click event to each button
+    cartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert("Flower Added to Cart");
+        });
+    });
+</script>
 
 </html>
