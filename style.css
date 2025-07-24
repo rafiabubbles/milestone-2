@@ -268,91 +268,87 @@
 }
 /* Deal */
 .dealphoto{
-      display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px; /* gap between left and right */
+  align-items: stretch;/* Ensure equal height */
+  margin: 0 auto;
+  width:100%;
+  max-width: 1140px;
   padding: 20px;
-  align-items: center;
 }
-
 .left{
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 20px; /* gap between the two small images */
 }
-
-.dealhead1{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.right .dealhead2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.pic1{
-     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-bloom.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.pic2{
-     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-zabo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-        background-position: center;
-}
-
-.dealhead1 h2{
-    font-size:1.25em;
-    font-family: "noto serif",sans-serif;
-    font-weight: bold;
-        color: white;
-}
-.dealhead1 p{
-    font-size:1.25em;
-    font-family: "inter",sans-serif;
-    text-decoration: underline;
-        color: white;
-}
-.dealhead2{
- background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-ana.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background-position: center;
-    position: relative;
-    height: 100%; 
-    min-height: 300px;
-    overflow: hidden; */
-  background-position: center;
-
-}
-.dealhead2 h2{
-    font-size:1.75em;
-    font-family: "noto serif",sans-serif;
-    font-weight: 700;
-    color: white;
-}
-.dealhead2 p{
-    font-weight: 500;
-     font-family: "inter",sans-serif;
-     font-size: 1.75em;
-    text-decoration: underline;
-    color:white
-}
 .pic1,
 .pic2,
 .dealhead2 {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 200px; /* adjust as needed */
-    border-radius: 10px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  min-height: 200px; /* fallback for very small screens */
 }
+.pic1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-bloom.png);
+}
+.pic2{
+     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-zabo.png);
+}
+.dealhead2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/deal-ana.png);
+       background-size: cover;
+       background-repeat: no-repeat;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+     background-position: center;
+   }
+/* Text Styling */
+.dealhead1 h2, .dealhead2 h2 {
+    font-family: "Noto Serif", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .dealhead1 p, .dealhead2 p {
+    font-family: "Inter", sans-serif;
+    text-decoration: underline;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* Ensure equal height */
+  .left > div,
+  .right > div {
+    height: 100%;
+  }
+  
+  /* Responsive Handling */
+  @media (max-width: 576px) {
+    .dealphoto {
+      grid-template-columns: 1fr;
+    }
+  
+    .left {
+      grid-template-rows: 1fr 1fr;
+    }
+  
+    .right {
+      margin-top: 20px;
+    }
+  }
+
   /* join */
   .join{
     background-image: url(./assets/news-letter-bg.png);
@@ -398,4 +394,81 @@
     color:white;
     border: none;
   }
+  .joincontent button:hover{
+    background-color: #a11433;
+  }
+  /* footer */
+  .footer-wrapper {
+    padding: 50px 20px; /* mobile-friendly padding */
+    background-color: #f8f8f8; /* optional for visual polish */
+  }
+  .footer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width:100%;
+    max-width: 1120px;
+    gap:20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .con1 h2{
+    font-size: 45px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    margin-top: 12px;
+    color: rgb(241, 126, 145);
+  }
+  .con1 p{
+    font-weight: 400;
+    font-size: 1.125em;
+    line-height: 1.6;
+    font-family: "inter", sans-serif;
+    color: #727272;
+  }
+  .con2 ul {
+    padding: 0;
+    margin: 0;
+  }
+  .con2 ul li{
+  list-style: none;
+  margin-top: 10px;
+  }
+  .con2 ul li a{
+    text-decoration: none;
+  color:#6B7280 ;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s;
+  }
+  .con2 ul li a:hover {
+    color: #f17e91; /* nice hover effect */
+  }
+  .con4{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+  }
+  .con4 img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .con4 img:hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 576px) {
+    .footer {    flex-direction: column;
+    }
+    .con2 {
+      margin-top: 20px;
+    }
+  
+    .con4 {
+      justify-content: center;
+    }
+  }
+  
+
 
